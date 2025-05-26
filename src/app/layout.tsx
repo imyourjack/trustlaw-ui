@@ -13,8 +13,44 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "최길성 법무사사무소",
-  description: "개인회생 및 파산 전문 법무사. 정확한 진단과 믿을 수 있는 상담 제공.",
+  title: '광주 최길성 법무사사무소',
+  description: '광주 지역의 개인회생, 개인파산, 부동산 및 법인등기, 민사소송, 가사사건에 특화된 전문 법무사입니다.',
+  keywords: [
+    '광주 개인회생',
+    '광주 파산',
+    '개인파산',
+    '부동산등기',
+    '법인등기',
+    '민사소송',
+    '물품대금',
+    '공사대금',
+    '손해배상',
+    '가사사건',
+    '이혼',
+    '개명',
+    '상속',
+    '광주 법무사'
+  ],
+  openGraph: {
+    title: '최길성 법무사사무소',
+    description: '광주 개인회생, 개인파산, 부동산 및 법인등기, 민사·가사사건 법률상담 전문.',
+    url: 'https://trustlaw.kr',
+    siteName: 'TrustLaw',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: '광주 개인회생 파산 법률상담 미리보기 이미지',
+      },
+    ],
+    locale: 'ko_KR',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({

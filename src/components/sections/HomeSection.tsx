@@ -1,11 +1,11 @@
 export default function HomeSection() {
   return (
     <section id="home" className="relative h-screen flex items-center">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src="/pic_home.webp"
           alt="광주 법무사 메인 배경"
-          className="w-full h-full object-fill"
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>

@@ -36,7 +36,7 @@ export default function QualificationSection() {
   ]
 
   return (
-    <section id="qualification" className="scroll-mt-32 mb-20 py-12 bg-gradient-to-b from-[#e9f1f4] to-white">
+    <section id="qualification" className="scroll-mt-32 mb-20 py-12 bg-gradient-to-b from-[#d4e4ed] to-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-10 text-center text-blue-900">
           개인회생 · 파산 신청 자격

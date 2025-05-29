@@ -22,7 +22,7 @@ export default function Header({ activeSection }: Props) {
           const headerHeight = header?.offsetHeight || 0;
           
           window.scrollTo({
-              top: el.offsetTop - headerHeight - 20,
+              top: el.offsetTop - headerHeight, // 60px 더 아래로 스크롤
               behavior: 'smooth'
           });
       }

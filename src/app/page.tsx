@@ -47,13 +47,14 @@ export default function Home() {
       <Header activeSection={activeSection} />
       <main className="w-full px-0 py-0">
         <HomeSection />
-      </main>
-      <main className="max-w-screen-lg mx-auto px-4 py-12 space-y-24">
         <QualificationSection />
         <ConsultSection />
         <FaqSection />
         <LocationSection />
       </main>
+      {/* <main className="max-w-screen-lg mx-auto px-4 py-12 space-y-24">
+
+      </main> */}
     </div>
   )
 }

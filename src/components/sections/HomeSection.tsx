@@ -1,11 +1,17 @@
+import React from 'react';
+import Image from 'next/image';
+
 export default function HomeSection() {
   return (
     <section id="home" className="relative h-screen flex items-center">
       <div className="absolute inset-0 overflow-hidden">
-        <img
+        <Image
           src="/pic_home.webp"
           alt="광주 법무사 메인 배경"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>

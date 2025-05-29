@@ -8,10 +8,10 @@ import ConsultSection from '@/components/sections/ConsultSection'
 import FaqSection from '@/components/sections/FaqSection'
 import LocationSection from '@/components/sections/LocationSection'
 
-const SECTION_IDS = ['qualification', 'consult', 'faq', 'location']
+const SECTION_IDS = ['home', 'qualification', 'consult', 'faq', 'location']
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('qualification')
+  const [activeSection, setActiveSection] = useState('home')
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {

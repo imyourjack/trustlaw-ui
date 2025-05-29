@@ -17,11 +17,12 @@ export default function HomeSection() {
       </div>
       <div className="relative w-full text-white text-center px-4">
         <h1 className="text-5xl md:text-6xl font-bold mb-6">
-          광주 개인회생·개인파산, 민사·가사·등기 법률상담 전문
+          광주, 전남 개인회생·개인파산, 민사·가사·등기 법률상담 전문
         </h1>
         <p className="text-xl md:text-2xl mb-8">
+          광주, 전남 지역을 중심으로, 전국 어디서든 개인회생과 파산 상담이 가능합니다. <br />
           부동산등기, 법인등기, 물품대금·손해배상 등 민사소송, 이혼·상속·개명 등 가사사건까지
-          광주 지역 법률 문제를 신속하게 해결합니다.
+          법률 문제를 신속하게 해결합니다.
         </p>
         <div className="flex justify-center gap-4">
           <a href="tel:0212345678">

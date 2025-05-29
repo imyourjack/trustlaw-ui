@@ -13,8 +13,16 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: '광주 최길성 법무사사무소',
-  description: '광주 지역의 개인회생, 개인파산, 부동산 및 법인등기, 민사소송, 가사사건에 특화된 전문 법무사입니다.',
+  title: '최길성 법무사사무소',
+  description: '광주, 전남 지역의 개인회생, 개인파산, 부동산 및 법인등기, 민사소송, 가사사건에 특화된 전문 법무사입니다.',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  appleWebApp: {
+    capable: true,
+    title: '최길성 법무사사무소',
+    statusBarStyle: 'black-translucent',
+  },
   keywords: [
     '광주 개인회생',
     '광주 파산',

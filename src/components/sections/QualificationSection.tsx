@@ -1,10 +1,10 @@
 export default function QualificationSection() {
   return (
     <section id="qualification" className="scroll-mt-32 mb-20">
-      <h2 className="text-3xl font-bold mb-8">광주 개인회생·파산 신청 자격</h2>
+      <h2 className="text-3xl font-bold mb-8">개인회생·파산 신청 자격</h2>
       <div className="bg-white rounded-lg shadow-lg p-8">
       <p className="text-lg text-gray-800 mb-6">
-        광주 지역을 중심으로, 전국 어디서든 개인회생과 파산 상담이 가능합니다. <br />
+        광주, 전남 지역을 중심으로, 전국 어디서든 개인회생과 파산 상담이 가능합니다. <br />
         관할 법원 절차는 물론, 부동산등기, 민사소송(물품대금·공사대금 등), 이혼·상속 등 가사사건까지 폭넓게 지원합니다.
       </p>
         <div className="grid md:grid-cols-2 gap-6">

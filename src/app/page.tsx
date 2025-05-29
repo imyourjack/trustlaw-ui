@@ -8,14 +8,15 @@ import ConsultSection from '@/components/sections/ConsultSection'
 import FaqSection from '@/components/sections/FaqSection'
 import LocationSection from '@/components/sections/LocationSection'
 
-const SECTION_IDS = ['home', 'qualification', 'consult', 'faq', 'location']
+// 스크롤에 따라 메뉴 글자 색 변화
+// const SECTION_IDS = ['home', 'qualification', 'consult', 'faq', 'location']
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home')
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
-    const sections = SECTION_IDS.map(id => document.getElementById(id)).filter((el): el is HTMLElement => el !== null)
+    // const sections = SECTION_IDS.map(id => document.getElementById(id)).filter((el): el is HTMLElement => el !== null)
 
     if (observerRef.current) observerRef.current.disconnect()
 
@@ -34,9 +35,9 @@ export default function Home() {
       }
     )
 
-    sections.forEach(section => {
-      if (section) observerRef.current?.observe(section)
-    })
+    // sections.forEach(section => {
+    //   if (section) observerRef.current?.observe(section)
+    // })
 
     return () => observerRef.current?.disconnect()
   }, [])

@@ -18,7 +18,7 @@ export default function HomeSection() {
 
       <div className="relative w-full text-white text-center px-4">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          광주·전남 개인회생 · 파산 전문 법무사사무소
+          개인회생 · 파산 전문 법무사사무소
         </h1>
 
         <p className="text-xl md:text-2xl mb-8 leading-relaxed">

@@ -1,37 +1,36 @@
 import { FaUserCheck, FaBalanceScale, FaCommentsDollar, FaBriefcase, FaUserSecret, FaLaptopHouse } from 'react-icons/fa'
-import Link from 'next/link'
 
 export default function QualificationSection() {
   const qaList = [
     {
       icon: <FaUserCheck size={28} className="text-blue-600" />,
-      q: 'Q. 개인회생은 누가 신청할 수 있나요?',
-      a: '일정한 소득이 있는 분이라면 누구나 신청 가능합니다. 신용불량자도 신청이 가능합니다.',
+      q: 'Q. 최근 6개월 이상 꾸준한 소득이 있나요?',
+      a: '네, 일정한 수입이 있는 경우 개인회생 신청 자격이 있습니다. 급여소득, 프리랜서, 자영업자 모두 포함됩니다.',
     },
     {
       icon: <FaBalanceScale size={28} className="text-blue-600" />,
-      q: 'Q. 개인파산은 어떤 경우에 가능한가요?',
-      a: '채무가 과도하고 상환 능력이 부족한 경우, 특히 일정한 수입이 없거나 장기간 무직 상태라면 가능합니다.',
+      q: 'Q. 총 채무가 감당하기 어려운 수준인가요?',
+      a: '신용카드 연체, 금융권·사채 대출, 투자 실패 등으로 채무가 소득을 초과하는 경우 회생이나 파산 신청 대상이 될 수 있습니다.',
     },
     {
       icon: <FaCommentsDollar size={28} className="text-blue-600" />,
-      q: 'Q. 상담을 통해 어떤 문제를 해결할 수 있나요?',
-      a: '카드빚, 대출, 사채는 물론 주식 투자, 가상자산, 도박 채무까지 상담이 가능합니다.',
+      q: 'Q. 본인 명의의 재산이 많지 않은가요?',
+      a: '주택, 차량, 예금 등의 재산이 제한적이라면 채무 조정이 가능합니다. 회생과 파산 모두 재산 상황이 중요한 기준입니다.',
     },
     {
       icon: <FaBriefcase size={28} className="text-blue-600" />,
-      q: 'Q. 회생·파산 후에도 일상생활은 가능한가요?',
-      a: '네, 은행거래, 직장생활, 사업 등 정상적인 사회활동에 지장이 없습니다.',
+      q: 'Q. 향후 3~5년간 꾸준히 상환이 가능한가요?',
+      a: '정기적인 수입이 있어 변제 계획을 실행할 수 있다면 개인회생이 적합합니다. 수입이 없다면 개인파산이 검토됩니다.',
     },
     {
       icon: <FaUserSecret size={28} className="text-blue-600" />,
-      q: 'Q. 주변에 알려지지는 않나요?',
-      a: '가족이나 직장에 알리지 않으며, 모든 절차는 비공개로 안전하게 진행됩니다.',
+      q: 'Q. 채무로 인해 독촉·압류 등 피해를 받고 있나요?',
+      a: '채권자의 독촉, 급여 압류 등이 있다면 법원의 중지명령을 통해 즉시 보호받을 수 있습니다.',
     },
     {
       icon: <FaLaptopHouse size={28} className="text-blue-600" />,
-      q: 'Q. 꼭 사무실을 방문해야 하나요?',
-      a: '방문이 어려운 경우 비대면으로도 충분히 상담 및 신청이 가능합니다.',
+      q: 'Q. 사무실 방문 없이 신청하고 싶으신가요?',
+      a: '방문이 어려운 경우에도 전화·문서·카카오톡을 통해 비대면으로 회생/파산 절차 진행이 가능합니다.',
     },
   ]
 
@@ -57,13 +56,13 @@ export default function QualificationSection() {
           ))}
         </div>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <Link href="#consult">
             <button className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow transition">
               무료 상담 신청하기
             </button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   )

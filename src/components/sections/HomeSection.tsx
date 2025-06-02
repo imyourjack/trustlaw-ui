@@ -1,21 +1,20 @@
 import React from 'react'
-import Image from 'next/image'
 
 export default function HomeSection() {
   return (
-    <section id="home" className="relative h-screen flex items-center">
-      <div className="absolute inset-0 overflow-hidden">
-        <Image
-          src="/pic_home.webp"
-          alt="광주 법무사 메인 배경"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-      </div>
-
+    <section 
+      id="home" 
+      className="relative min-h-screen flex items-center justify-center py-24"
+      style={{
+        backgroundImage: 'url(/pic_home_mb.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-black/50"></div>
+      
       <div className="relative w-full text-white text-center px-4">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
           개인회생 · 파산 전문 법무사사무소
@@ -34,9 +33,14 @@ export default function HomeSection() {
             </button> */}
           </a>
           <button
-            onClick={() =>
-              document.getElementById('consult')?.scrollIntoView({ behavior: 'smooth' })
-            }
+            onClick={() => {
+              const element = document.getElementById('consult');
+              if (element) {
+                const yOffset = -80; // 헤더 높이만큼 조정
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+              }
+            }}
             className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
           >
             상담 방법 알아보기

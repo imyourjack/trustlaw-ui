@@ -8,16 +8,11 @@ import ConsultSection from '@/components/sections/ConsultSection'
 import FaqSection from '@/components/sections/FaqSection'
 import LocationSection from '@/components/sections/LocationSection'
 
-// 스크롤에 따라 메뉴 글자 색 변화
-// const SECTION_IDS = ['home', 'qualification', 'consult', 'faq', 'location']
-
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home')
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
-    // const sections = SECTION_IDS.map(id => document.getElementById(id)).filter((el): el is HTMLElement => el !== null)
-
     if (observerRef.current) observerRef.current.disconnect()
 
     observerRef.current = new IntersectionObserver(
@@ -35,26 +30,33 @@ export default function Home() {
       }
     )
 
-    // sections.forEach(section => {
-    //   if (section) observerRef.current?.observe(section)
-    // })
-
     return () => observerRef.current?.disconnect()
   }, [])
 
   return (
-    <div className="bg-gray-50 text-gray-900">
+    <>
+      {/* ✅ Header는 회색 배경 div 바깥에 위치 */}
       <Header activeSection={activeSection} />
-      <main className="w-full px-0 py-0">
-        <HomeSection />
-        <QualificationSection />
-        <ConsultSection />
-        <FaqSection />
-        <LocationSection />
-      </main>
-      {/* <main className="max-w-screen-lg mx-auto px-4 py-12 space-y-24">
-
-      </main> */}
-    </div>
+  
+      {/* 상단 회색 배경 영역: 홈~상담 섹션에만 적용 */}
+      <div className="bg-gray-50 text-gray-900">
+        <main className="w-full px-0 py-0">
+          <HomeSection />
+          <QualificationSection />
+        </main>
+      </div>
+  
+      {/* FAQ 섹션은 배경 이미지가 있으므로 분리 */}
+      <ConsultSection />
+      <FaqSection />
+  
+      {/* 하단 회색 배경 계속 유지 */}
+      <div className="bg-gray-50 text-gray-900">
+        <main className="w-full px-0 py-0">
+          <LocationSection />
+        </main>
+      </div>
+    </>
   )
+  
 }

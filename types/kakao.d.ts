@@ -8,7 +8,6 @@ declare global {
       maps: {
         load(callback: () => void): void;
 
-        // ✅ 공통 타입 alias
         LatLng: new (lat: number, lng: number) => KakaoLatLng;
         Map: new (
           container: HTMLElement,
@@ -57,7 +56,6 @@ declare global {
     };
   }
 
-  // ✅ 별도 타입 정의들
   type KakaoLatLng = {
     getLat(): number;
     getLng(): number;

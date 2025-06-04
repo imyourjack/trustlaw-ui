@@ -40,7 +40,6 @@ export default function FaqSection() {
             className="object-cover"
             sizes="100vw"
           />
-          {/* ✅ 더 짙은 밝은 오버레이 */}
           <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" />
         </div>
       </div>

@@ -7,6 +7,7 @@ import QualificationSection from '@/components/sections/QualificationSection'
 import ConsultSection from '@/components/sections/ConsultSection'
 import FaqSection from '@/components/sections/FaqSection'
 import LocationSection from '@/components/sections/LocationSection'
+import Footer from '@/components/sections/Footer'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home')
@@ -50,6 +51,7 @@ export default function Home() {
       <div className="text-gray-900">
         <main className="w-full px-0 py-0">
           <LocationSection />
+          <Footer />
         </main>
       </div>
     </>

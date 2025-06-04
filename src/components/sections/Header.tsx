@@ -16,18 +16,24 @@ export default function Header({ activeSection }: Props) {
     ]
 
     const handleClick = (id: string) => {
-      const el = document.getElementById(id);
-      if (el) {
+        const el = document.getElementById(id);
+        if (el) {
           const header = document.querySelector('header');
           const headerHeight = header?.offsetHeight || 0;
+          let offset = 0;
+          
+          // 오시는 길 섹션인 경우 추가 오프셋 적용
+          if (id === 'location') {
+            offset = 40; // 필요에 따라 조정 가능
+          }
           
           window.scrollTo({
-              top: el.offsetTop - headerHeight, // 60px 더 아래로 스크롤
-              behavior: 'smooth'
+            top: el.offsetTop - headerHeight - offset,
+            behavior: 'smooth'
           });
+        }
+        setIsMenuOpen(false);
       }
-      setIsMenuOpen(false);
-    }
 
     return (
         <header className="bg-blue-900 text-white shadow-md sticky top-0 z-50">

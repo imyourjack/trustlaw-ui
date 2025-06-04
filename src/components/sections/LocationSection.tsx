@@ -66,7 +66,6 @@ export default function LocationSection() {
 
           info.open(map, marker)
 
-          // ✅ 클릭 시 외부 카카오맵으로 연결
           window.kakao.maps.event.addListener(marker, 'click', () => {
             const lat = result[0].y
             const lng = result[0].x
@@ -92,14 +91,13 @@ export default function LocationSection() {
           <div>
             <h3 className="text-xl font-semibold mb-4 text-blue-700">교통 안내</h3>
             <ul className="list-disc pl-6 text-gray-700">
-              <li>지하철 1호선 동명역 1번 출구 도보 5분</li>
-              <li>버스 정류장 도보 3분 거리</li>
+              <li>법원 버스 정류장 도보 2분 거리</li>
               <li>주차장 이용 가능</li>
             </ul>
           </div>
         </div>
         <div>
-          <div id="map" className="w-full h-[400px] rounded-lg border" />
+          <div id="map" className="w-full h-[500px] rounded-lg border" />
         </div>
       </div>
     </section>

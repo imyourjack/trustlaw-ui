@@ -109,7 +109,9 @@ trustlaw-ui/
 - [x] 전체적으로 애니메이션 적용
 
 * 배포
-- [ ] 도메인 연결 및 운영 서버(Vercel 또는 기타) 구축
+
+- [x] Vercel 배포
+- [ ] 도메인 연결
 - [ ] SEO 설정 (`metadata`, og:image 등 추가)
 - [ ] 구글 애널리틱스 또는 네이버 서치 등록
 - [ ] robot.txt & next-sitemap.config.js > 두 파일 URL 실제 배포 URL로 교체 > (now) https://trustlaw.kr

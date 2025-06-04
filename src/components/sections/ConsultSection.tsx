@@ -5,7 +5,7 @@ export default function ConsultSection() {
   return (
     <motion.section 
       id="consult" 
-      className="scroll-mt-32 mb-0 pt-16 relative"
+      className="scroll-mt-32 mb-0 pt-16 pb-16 relative"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOptions}

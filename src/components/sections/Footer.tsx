@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-      <footer className="bg-gray-900 text-gray-300 text-sm py-8 mt-20">
+      <footer className="bg-gray-900 text-gray-300 text-sm py-8">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           {/* 좌측 - 사무소 정보 */}
           <div className="text-center md:text-left">

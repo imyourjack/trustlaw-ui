@@ -51,9 +51,9 @@ export default function Home() {
       <div className="text-gray-900">
         <main className="w-full px-0 py-0">
           <LocationSection />
-          <Footer />
         </main>
       </div>
+      <Footer />
     </>
   )
   

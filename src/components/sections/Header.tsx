@@ -20,12 +20,11 @@ export default function Header({ activeSection }: Props) {
         if (el) {
           const header = document.querySelector('header');
           const headerHeight = header?.offsetHeight || 0;
-          let offset = 0;
+          const offset = 0;
           
-          // 오시는 길 섹션인 경우 추가 오프셋 적용
-          if (id === 'location') {
-            offset = 40; // 필요에 따라 조정 가능
-          }
+        //   if (id === 'location') {
+        //     offset = 40;
+        //   }
           
           window.scrollTo({
             top: el.offsetTop - headerHeight - offset,

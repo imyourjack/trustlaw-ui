@@ -12,7 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "@tailwindcss/typography": "^0.5.16",
-    "framer-motion": "^12.14.0",
+    "framer-motion": "^12.16.0",
     "next": "15.3.2",
     "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
@@ -20,6 +20,7 @@
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.4",
     "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
     "zod": "^3.25.30"
   },
   "devDependencies": {

@@ -1,4 +1,7 @@
-import { FaUserCheck, FaBalanceScale, FaCommentsDollar, FaBriefcase, FaUserSecret, FaLaptopHouse } from 'react-icons/fa'
+import { motion } from 'framer-motion';
+import { FaUserCheck, FaBalanceScale, FaCommentsDollar, FaBriefcase, FaUserSecret, FaLaptopHouse } from 'react-icons/fa';
+import Link from 'next/link';
+import { fadeIn, fadeInUp, staggerContainer, viewportOptions } from '@/utils/animations';
 
 export default function QualificationSection() {
   const qaList = [
@@ -35,35 +38,56 @@ export default function QualificationSection() {
   ]
 
   return (
-    <section id="qualification" className="scroll-mt-32 mb-20 py-12 bg-gradient-to-b from-[#d4e4ed] to-white">
+    <motion.section 
+      id="qualification" 
+      className="scroll-mt-32 mb-20 py-12 bg-gradient-to-b from-[#d4e4ed] to-white"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOptions}
+      variants={staggerContainer(0.2)}
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-10 text-center text-blue-900">
+        <motion.h2 
+          className="text-3xl font-bold mb-10 text-center text-blue-900"
+          variants={fadeInUp}
+        >
           개인회생 · 파산 신청 자격
-        </h2>
+        </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+        <motion.div 
+          className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12"
+          variants={staggerContainer(0.1)}
+        >
           {qaList.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white border border-blue-100 rounded-lg p-6 shadow-md flex gap-4"
+              variants={fadeIn}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <div className="mt-1">{item.icon}</div>
               <div>
-                <p className="text-blue-800 font-semibold mb-2">{item.q}</p>
-                <p className="text-gray-700 leading-relaxed">{item.a}</p>
+                <h3 className="font-bold text-lg mb-2">{item.q}</h3>
+                <p className="text-gray-700">{item.a}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* <div className="text-center">
+        <motion.div 
+          className="text-center mt-8"
+          variants={fadeInUp}
+        >
           <Link href="#consult">
-            <button className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow transition">
+            <motion.button 
+              className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow transition"
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+            >
               무료 상담 신청하기
-            </button>
+            </motion.button>
           </Link>
-        </div> */}
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

@@ -1,4 +1,6 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, viewportOptions } from '@/utils/animations';
 
 export default function FaqSection() {
   const faqs = [
@@ -25,9 +27,13 @@ export default function FaqSection() {
   ];
 
   return (
-    <section
+    <motion.section
       id="faq"
-      className="relative scroll-mt-32 py-20 mb-20 min-h-[700px] overflow-hidden z-0 text-gray-900"
+      className="relative scroll-mt-32 py-20 min-h-[700px] overflow-hidden z-0 text-gray-900"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOptions}
+      variants={staggerContainer(0.2)}
     >
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-[-1]">
@@ -46,22 +52,30 @@ export default function FaqSection() {
 
       {/* 내용 */}
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-3xl font-bold mb-10 text-center text-blue-900 drop-shadow-sm">
+        <motion.h2 
+          className="text-3xl font-bold mb-10 text-center text-blue-900 drop-shadow-sm"
+          variants={fadeInUp}
+        >
           자주 묻는 질문
-        </h2>
+        </motion.h2>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <motion.div 
+          className="max-w-4xl mx-auto space-y-6"
+          variants={staggerContainer(0.1)}
+        >
           {faqs.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
               className="bg-white/90 rounded-lg p-6 shadow-md border border-gray-200 backdrop-blur-sm"
+              variants={fadeInUp}
+              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
             >
               <p className="text-blue-800 font-semibold mb-2">{item.q}</p>
               <p className="text-gray-800 leading-relaxed">{item.a}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

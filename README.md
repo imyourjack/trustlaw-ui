@@ -89,6 +89,10 @@ trustlaw-ui/
 - [ ] 구글 애널리틱스 또는 네이버 서치 등록
 - [ ] robot.txt & next-sitemap.config.js > 두 파일 URL 실제 배포 URL로 교체 > (now) https://trustlaw.kr
 
+* 고객 문의
+- [ ] 주차 안내 방법 문의 후 추가
+- [ ] 전화번호 확인하기
+
 ✅ 네이버 사이트 등록 필수
 네이버 서치어드바이저 사용:
 주소: https://searchadvisor.naver.com

@@ -15,7 +15,6 @@ export default function ConsultSection() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
         minHeight: '75vh'
       }}
     >

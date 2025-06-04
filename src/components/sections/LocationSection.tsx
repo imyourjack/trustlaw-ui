@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { fadeIn, fadeInUp, staggerContainer, viewportOptions } from '@/utils/animations';
+import { fadeInUp, staggerContainer, viewportOptions } from '@/utils/animations';
 
 export default function LocationSection() {
   useEffect(() => {

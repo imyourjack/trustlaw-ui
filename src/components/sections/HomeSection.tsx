@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
+import { imageBlurData } from '@/utils/performance';
+import { staggerContainer } from '@/utils/animations'; // fadeInUp은 사용하지 않으므로 제거
 
 export default function HomeSection() {
   const controls = useAnimation();
@@ -15,16 +18,6 @@ export default function HomeSection() {
     }
   }, [controls, inView]);
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
   const item = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -37,26 +30,29 @@ export default function HomeSection() {
     },
   };
   return (
-    <section 
-      id="home" 
-      className="relative min-h-screen flex items-center justify-center py-24 overflow-hidden"
-      style={{
-        backgroundImage: 'url(/pic_home_mb.webp)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        minHeight: '100vh'
-      }}
-    >
-      <div className="absolute inset-0 bg-black/50"></div>
+    <section id="home" className="relative h-screen w-full overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src="/pic_home_mb.webp"
+          alt="법무사 사무소 배경 이미지"
+          fill
+          priority
+          className="object-cover"
+          quality={85}
+          placeholder="blur"
+          blurDataURL={imageBlurData}
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
       
       <motion.div 
         ref={ref}
-        className="relative w-full text-white text-center px-4"
-        variants={container}
+        className="relative h-full flex flex-col items-center justify-center px-4 text-white text-center"
+        variants={staggerContainer(0.2)}
         initial="hidden"
         animate={controls}
       >
+        <div className="container mx-auto max-w-4xl">
         <motion.h1 
           className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
           variants={item}
@@ -98,6 +94,7 @@ export default function HomeSection() {
             상담 방법 알아보기
           </motion.button>
         </motion.div>
+        </div>
       </motion.div>
     </section>
   );

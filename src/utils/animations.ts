@@ -1,34 +1,37 @@
 import { Variants } from 'framer-motion';
 
-export const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
+const baseTransition = {
+  duration: 0.6,
+  ease: [0.16, 1, 0.3, 1], // 부드러운 이징
+};
+
+export const fadeInUp: Variants = {
+  hidden: { 
+    opacity: 0, 
+    y: 20,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: 'easeOut',
-    },
+    transition: baseTransition,
   },
-} as Variants;
+};
 
-export const fadeIn = {
-  hidden: { opacity: 0 },
+export const fadeIn: Variants = {
+  hidden: { 
+    opacity: 0,
+  },
   visible: {
     opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: 'easeOut',
-    },
+    transition: baseTransition,
   },
-} as Variants;
+};
 
-export const staggerContainer = (staggerChildren = 0.2) => ({
-  hidden: { opacity: 0 },
+export const staggerContainer = (delayChildren = 0.1): Variants => ({
+  hidden: {},
   visible: {
-    opacity: 1,
     transition: {
-      staggerChildren,
+      staggerChildren: delayChildren,
     },
   },
 });
@@ -36,4 +39,13 @@ export const staggerContainer = (staggerChildren = 0.2) => ({
 export const viewportOptions = {
   once: true,
   margin: '0px 0px -100px 0px',
+};
+
+// 성능 최적화를 위한 CSS 속성
+export const optimizeAnimation = {
+  willChange: 'transform, opacity',
+  backfaceVisibility: 'hidden' as const,
+  WebkitFontSmoothing: 'antialiased' as const,
+  WebkitTransform: 'translateZ(0)',
+  transform: 'translateZ(0)',
 };

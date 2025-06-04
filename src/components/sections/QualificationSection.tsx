@@ -33,7 +33,7 @@ export default function QualificationSection() {
     {
       icon: <FaLaptopHouse size={28} className="text-blue-600" />,
       q: 'Q. 사무실 방문 없이 신청하고 싶으신가요?',
-      a: '방문이 어려운 경우에도 전화·문서·카카오톡을 통해 비대면으로 회생/파산 절차 진행이 가능합니다.',
+      a: '방문이 어려운 경우에도 전화를 통해 비대면으로 회생/파산 절차 진행이 가능합니다.',
     },
   ]
 

@@ -69,7 +69,6 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        {/* ✅ 카카오맵 JavaScript SDK 추가 */}
         <script
           src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY}&autoload=false`}
           async

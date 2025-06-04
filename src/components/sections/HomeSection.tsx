@@ -45,7 +45,7 @@ export default function HomeSection() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        minHeight: '75vh'
+        minHeight: '100vh'
       }}
     >
       <div className="absolute inset-0 bg-black/50"></div>

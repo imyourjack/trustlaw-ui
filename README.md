@@ -111,10 +111,10 @@ trustlaw-ui/
 * 배포
 
 - [x] Vercel 배포
-- [ ] 도메인 연결
-- [ ] SEO 설정 (`metadata`, og:image 등 추가)
+- [x] SEO 설정 (`metadata`, og:image 등 추가)
 - [ ] 구글 애널리틱스 또는 네이버 서치 등록
-- [ ] robot.txt & next-sitemap.config.js > 두 파일 URL 실제 배포 URL로 교체 > (now) https://trustlaw.kr
+- [ ] robot.txt & next-sitemap.config.js > 두 파일 URL 실제 배포 URL로 교체 > (ex) https://trustlaw.kr
+- [ ] 도메인 연결
 
 * 고객 문의
 - [ ] 네이버지도, 카카오맵 등록할 각각의 id/pw 문의
@@ -135,7 +135,7 @@ trustlaw-ui/
 
 사이트 소유 확인
 
-https://trustlaw.kr 도메인을 넣고
+ex) https://trustlaw.kr 도메인을 넣고
 
 HTML 파일 업로드 or <meta> 태그 삽입 방식 중 택1
 

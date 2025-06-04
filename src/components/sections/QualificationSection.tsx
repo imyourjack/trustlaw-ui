@@ -40,7 +40,7 @@ export default function QualificationSection() {
   return (
     <motion.section 
       id="qualification" 
-      className="scroll-mt-32 mb-20 py-12 bg-gradient-to-b from-[#d4e4ed] to-white"
+      className="scroll-mt-32 mb-0 py-12 bg-gradient-to-b from-[#d4e4ed] to-white"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOptions}

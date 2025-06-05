@@ -14,7 +14,7 @@
 
 ### 기타 도구
 - ESLint / Prettier
-- Vercel (배포 예정)
+- Vercel
 
 ---
 

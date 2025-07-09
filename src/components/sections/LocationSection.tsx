@@ -77,22 +77,6 @@ export default function LocationSection() {
     }
   }, [])
 
-  // 카카오맵 앱 딥링크 + 웹 fallback 함수
-  function openKakaoMap() {
-    const userAgent = typeof window !== 'undefined' ? window.navigator.userAgent : '';
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(userAgent);
-    const appLink = 'kakaomap://place?id=11445959';
-    const webLink = 'https://place.map.kakao.com/11445959';
-    if (isMobile) {
-      window.location.href = appLink;
-      setTimeout(() => {
-        window.open(webLink, '_blank');
-      }, 1000);
-    } else {
-      window.open(webLink, '_blank');
-    }
-  }
-
   return (
     <motion.section 
       id="location" 

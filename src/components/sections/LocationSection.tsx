@@ -55,8 +55,8 @@ export default function LocationSection() {
             content: `
               <div style="padding:6px 12px; font-size:14px;">
                 <a 
-                  href="https://map.kakao.com/link/map/최길성 법무사사무소,${result[0].y},${result[0].x}" 
-                  target="_blank" 
+                  href="https://map.kakao.com/?q=최길성 법무사사무소"
+                  target="_blank"
                   rel="noopener noreferrer"
                   style="color:#0055aa; font-weight:bold; text-decoration:underline;"
                 >
@@ -69,17 +69,29 @@ export default function LocationSection() {
           info.open(map, marker)
 
           window.kakao.maps.event.addListener(marker, 'click', () => {
-            const lat = result[0].y
-            const lng = result[0].x
-            const placeName = encodeURIComponent('최길성 법무사사무소')
-
-            const url = `https://map.kakao.com/link/map/${placeName},${lat},${lng}`
-            window.open(url, '_blank')
+            const url = 'https://map.kakao.com/?q=최길성 법무사사무소';
+            window.open(url, '_blank');
           })
         }
       })
     }
   }, [])
+
+  // 카카오맵 앱 딥링크 + 웹 fallback 함수
+  function openKakaoMap() {
+    const userAgent = typeof window !== 'undefined' ? window.navigator.userAgent : '';
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(userAgent);
+    const appLink = 'kakaomap://place?id=11445959';
+    const webLink = 'https://place.map.kakao.com/11445959';
+    if (isMobile) {
+      window.location.href = appLink;
+      setTimeout(() => {
+        window.open(webLink, '_blank');
+      }, 1000);
+    } else {
+      window.open(webLink, '_blank');
+    }
+  }
 
   return (
     <motion.section 
@@ -90,7 +102,6 @@ export default function LocationSection() {
       viewport={viewportOptions}
       variants={staggerContainer(0.2)}
     >
-      <div className="absolute inset-0 bg-[url('/images/map-pattern.png')] opacity-10"></div>
       <div className="relative z-10">
         <motion.h2 
           className="text-4xl font-bold mb-12 text-center text-blue-900"

@@ -51,11 +51,16 @@ export default function LocationSection() {
             position: coords,
           })
 
+          // 모바일인지 확인
+          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+          const searchQuery = encodeURIComponent('최길성 법무사사무소');
+          const mapUrl = isMobile ? `kakaomap://search?q=${searchQuery}` : `https://map.kakao.com/?q=${searchQuery}`;
+          
           const info = new window.kakao.maps.InfoWindow({
             content: `
               <div style="padding:6px 12px; font-size:14px;">
                 <a 
-                  href="https://map.kakao.com/?q=최길성 법무사사무소"
+                  href="${mapUrl}"
                   target="_blank"
                   rel="noopener noreferrer"
                   style="color:#0055aa; font-weight:bold; text-decoration:underline;"
@@ -69,8 +74,37 @@ export default function LocationSection() {
           info.open(map, marker)
 
           window.kakao.maps.event.addListener(marker, 'click', () => {
-            const url = 'https://map.kakao.com/?q=최길성 법무사사무소';
-            window.open(url, '_blank');
+            // 모바일인지 확인
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            const searchQuery = encodeURIComponent('최길성 법무사사무소');
+            
+            if (isMobile) {
+              // 여러 카카오맵 URL 스킴 시도
+              const appUrls = [
+                `kakaomap://search?q=${searchQuery}`,
+                `kakaomap://look?q=${searchQuery}`,
+                `kakaomap://place?q=${searchQuery}`,
+                `kakaomap://?q=${searchQuery}`,
+                `kakaomap://search?keyword=${searchQuery}`,
+                `kakaomap://look?keyword=${searchQuery}`,
+                `kakaomap://search?query=${searchQuery}`,
+                `kakaomap://look?query=${searchQuery}`
+              ];
+              
+              const webUrl = `https://map.kakao.com/?q=${searchQuery}`;
+              
+              // 첫 번째 URL 스킴 시도
+              window.location.href = appUrls[0];
+              
+              // 1초 후 앱이 실행되지 않으면 웹으로 이동
+              setTimeout(() => {
+                window.location.href = webUrl;
+              }, 1000);
+            } else {
+              // 데스크톱에서는 웹으로 검색
+              window.open(`https://map.kakao.com/?q=${searchQuery}`, '_blank');
+            }
           })
         }
       })

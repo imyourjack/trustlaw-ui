@@ -109,10 +109,6 @@ export default function RootLayout({
             gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
           `}
         </Script> */}
-        <script
-          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY}&autoload=false`}
-          async
-        />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         {children}
